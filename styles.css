@@ -8,74 +8,80 @@
 }
 
 body {
-  background-color: hsl(0, 0%, 95%);
-  font-size: 16px;
-  max-width: 1440px;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
 }
 
 
 .container {
-  display: flex;  
-  width: 900px;
-  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 820px;
+  height: 450px;
+  margin-top: 10px;
 }
 
 .sedan-container {
+  background-color: hsl(31, 77%, 52%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: hsl(31, 77%, 52%);
-  width: 350px;
-  height: 450px;
-  border-bottom-left-radius: 8px;
+  justify-content: space-evenly;
+  padding: 10px 40px 20px 38px;
   border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .suvs-container {
   background-color: hsl(184, 100%, 22%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 350px;
-  height: 450px;
+  justify-content: space-evenly;
+  padding: 10px 40px 20px 38px;
 }
 
 .luxury-container {
   background-color: hsl(179, 100%, 13%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 350px;
-  height: 450px;
-  border-bottom-right-radius: 8px;
+  justify-content: space-evenly;
+  padding: 10px 40px 20px 38px;
   border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .icon {
-  width: 60px;
-  margin-left: 30px;
-  margin-top: 40px;
+  width: 3.7rem;
   margin-bottom: 0;
 }
 
 
 h1 {
   font-family: 'Big Shoulders Display';
+  font-weight: 700;
+  font-size: 2.1rem; 
   color: hsl(0, 0%, 95%);
-  margin-left: 30px;
-  margin-top: -80px;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 p {
-  color: hsla(0, 0%, 100%, 0.75);
   font-family: 'Lexend Deca';
-  margin-left: 30px;
-  margin-right: 50px;
-  margin-top: -100px;
-  line-height: 26px;
-  margin-bottom: -50px;
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-top: 12px;
+  text-align: left;
+  width: 200px;
+  margin-bottom: 0;
+  line-height: 24px;
+  font-size: 0.9rem
 }
+
+.suv-paragraph {
+  /* width: 230px; */
+  text-align: left;
+}
+
 
 .button-sedan {
   font-family: 'Lexend Deca';
@@ -87,32 +93,71 @@ p {
   margin-left: 30px;
   margin-bottom: 40px;
 }
-.button-suv {
+
+button {
   font-family: 'Lexend Deca';
-  color:hsl(184, 100%, 22%);
-  padding: 16px;
-  width: 140px;
-  border-radius: 70px;
+  color:hsl(31, 77%, 52%);
+  padding: 18px;
+  width: 150px;
+  border-radius: 75px;
   border: none;
-  margin-left: 30px;
-  margin-bottom: 40px;
-}
-.button-luxury {
-  font-family: 'Lexend Deca';
-  color:hsl(179, 100%, 13%);
-  padding: 16px;
-  width: 140px;
-  border-radius: 70px;
-  border: none;
-  margin-left: 30px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-@media(max-width: 765px) {
+.button-sedan:hover {
+  background-color: hsl(31, 77%, 52%);
+  color: hsl(0, 0%, 95%);
+  border: 1px solid hsl(0, 0%, 95%);
+}
+
+.button-suv {
+  color: hsl(184, 100%, 22%);
+  font-weight: 400;
+}
+  
+  .button-suv:hover {
+  background-color: hsl(184, 100%, 22%);
+  color: hsl(0, 0%, 95%);
+  border: 1px solid hsl(0, 0%, 95%);
+}
+
+  .button-luxury {
+  color: hsl(179, 100%, 13%);
+  font-weight: 400;
+}
+
+.button-luxury:hover {
+  background-color: hsl(179, 100%, 13%);
+  color: hsl(0, 0%, 95%);
+  border: 1px solid hsl(0, 0%, 95%);
+}
+  
+  a {
+  text-decoration: none;
+}
+
+.link-sedan {
+  color:hsl(31, 77%, 52%);
+}
+
+.link-suv {
+  color: hsl(184, 100%, 22%);
+}
+
+.link-luxury {
+  color: hsl(179, 100%, 13%);
+}
+  
+
+@media(max-width: 670px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    margin: 100px 100px 100px 100px ;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 400px 400px;
   }
 
   .sedan-container {
@@ -120,15 +165,12 @@ p {
     border-bottom-left-radius: 0;
   }
 
-  .suvs-container {
-
-  }
-
   .luxury-container {
     border-top-right-radius: 0;
+    border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
   }
-
 }
+
 
 
